@@ -39,7 +39,8 @@ EXEFS_SRC   := exefs_src
 ROMFS       := romfs
 APP_TITLE   := Tinfoil
 APP_AUTHOR  := Adubbz
-APP_VERSION := 0.2.1
+APP_VERSION := 0.2.1-USB-HD
+ICON		:= tinfoil-usb.jpg
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -65,7 +66,7 @@ CXXFLAGS	:= $(CFLAGS) -std=gnu++17 $(CXXFLAGS)
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS	:= `freetype-config --libs` -lcurl -lz -lnx
+LIBS	:= `freetype-config --libs` -lcurl -lmbedtls -lmbedx509 -lmbedcrypto -lz -lnx
 
 
 
